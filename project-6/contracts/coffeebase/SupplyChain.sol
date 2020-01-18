@@ -155,11 +155,13 @@ contract SupplyChain is Ownable, ConsumerRole, DistributorRole, FarmerRole, Reta
   }
 
   // Define a function 'kill' if required
-  function kill() public {
-    if (msg.sender == owner()) {
-      selfdestruct(owner());
-    }
-  }
+  
+  /* Avoid implicit payable address conversion errors */
+  /* function kill() public { */
+  /*   if (msg.sender == owner()) { */
+  /*     selfdestruct(owner()); */
+  /*   } */
+  /* } */
 
   // Define a function 'harvestItem' that allows a farmer to mark an item 'Harvested'
   function harvestItem(uint _upc, address _originFarmerID, string _originFarmName, string _originFarmInformation, string  _originFarmLatitude, string  _originFarmLongitude, string  _productNotes) public 
