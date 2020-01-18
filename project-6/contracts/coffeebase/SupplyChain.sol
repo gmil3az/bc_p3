@@ -170,6 +170,7 @@ contract SupplyChain is Ownable, ConsumerRole, DistributorRole, FarmerRole, Reta
     Item memory newItem;
     newItem.sku = sku;
     newItem.upc = _upc;
+    newItem.productID = sku + _upc;
     newItem.originFarmerID = _originFarmerID;
     newItem.originFarmName = _originFarmName;
     newItem.originFarmInformation = _originFarmInformation;
@@ -192,8 +193,7 @@ contract SupplyChain is Ownable, ConsumerRole, DistributorRole, FarmerRole, Reta
   // Call modifier to verify caller of this function
     onlyFarmer
   {
-    Item memory tempItem;
-    tempItem = items[_upc];
+    Item tempItem = items[_upc];
     // Update the appropriate fields
     tempItem.itemState = State.Processed;
     // Emit the appropriate event
@@ -207,8 +207,7 @@ contract SupplyChain is Ownable, ConsumerRole, DistributorRole, FarmerRole, Reta
   // Call modifier to verify caller of this function
     onlyFarmer
   {
-    Item memory tempItem;
-    tempItem = items[_upc];
+    Item tempItem = items[_upc];
     // Update the appropriate fields
     tempItem.itemState = State.Packed;
     // Emit the appropriate event
@@ -222,8 +221,7 @@ contract SupplyChain is Ownable, ConsumerRole, DistributorRole, FarmerRole, Reta
   // Call modifier to verify caller of this function
     onlyFarmer
   {
-    Item memory tempItem;
-    tempItem = items[_upc];
+    Item tempItem = items[_upc];
     // Update the appropriate fields
     tempItem.productPrice = _price;
     tempItem.itemState = State.ForSale;
