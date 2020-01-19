@@ -1,6 +1,7 @@
 # My Assignment
 
 - My deployed SupplyChain.sol is available at https://rinkeby.etherscan.io/address/0x9a82cafa6766511a27157f92ea4998b01395ea39#code
+  The transaction hash is 0xc866bc40f8f15444afaaab2faf78b5df1594015bb88d0fe75a538310d73dba6d
 
 # Supply chain & data auditing
 
