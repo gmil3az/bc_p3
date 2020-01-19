@@ -8,6 +8,13 @@
     - Web3 v1.2.1
     - truffle-hdwallet-provider v1.0.17 This dependency is used to deploy my contract to Rinkeby network using Infura.
 
+# UML diagrams
+
+- [Activity diagram](https://github.com/gmil3az/bc_p3/blob/master/uml/ActivityDiagram.png)
+- [Class diagram](https://github.com/gmil3az/bc_p3/blob/master/uml/ClassDiagram.png)
+- [Sequence diagram](https://github.com/gmil3az/bc_p3/blob/master/uml/SequenceDiagram.png)
+- [State diagram](https://github.com/gmil3az/bc_p3/blob/master/uml/StateDiagram.png)
+
 # Supply chain & data auditing
 
 This repository containts an Ethereum DApp that demonstrates a Supply Chain flow between a Seller and Buyer. The user story is similar to any commonly used supply chain process. A Seller can add items to the inventory system stored in the blockchain. A Buyer can purchase such items from the inventory system. Additionally a Seller can mark an item as Shipped, and similarly a Buyer can mark an item as Received.
