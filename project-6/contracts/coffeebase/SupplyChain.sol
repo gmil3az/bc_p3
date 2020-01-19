@@ -93,6 +93,7 @@ contract SupplyChain is Ownable, ConsumerRole, DistributorRole, FarmerRole, Reta
     _;
     uint _price = items[_upc].productPrice;
     uint amountToReturn = msg.value - _price;
+    // I'm not sure if this given code is corrected, I think the change amount (msg.value - _price) should be transfered back to msg.sender instead
     items[_upc].consumerID.transfer(amountToReturn);
   }
 
