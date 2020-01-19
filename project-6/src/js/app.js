@@ -38,20 +38,21 @@ App = {
         App.retailerID = $("#retailerID").val();
         App.consumerID = $("#consumerID").val();
 
+	console.log("Form values have been reloaded with the following parameters:");
         console.log(
-            App.sku,
-            App.upc,
-            App.ownerID, 
-            App.originFarmerID, 
-            App.originFarmName, 
-            App.originFarmInformation, 
-            App.originFarmLatitude, 
-            App.originFarmLongitude, 
-            App.productNotes, 
-            App.productPrice, 
-            App.distributorID, 
-            App.retailerID, 
-            App.consumerID
+            "sku:"+App.sku,
+            ",upc:"+App.upc,
+            ",ownerID:"+App.ownerID, 
+            ",originFarmerID:"+App.originFarmerID, 
+            ",originFarmName:"+App.originFarmName, 
+            ",originFarmInformation:"+App.originFarmInformation, 
+            ",originFarmLatitude:"+App.originFarmLatitude, 
+            ",originFarmLongitude:"+App.originFarmLongitude, 
+            ",productNotes:"+App.productNotes, 
+            ",productPrice:"+App.productPrice, 
+            ",distributorID:"+App.distributorID, 
+            ",retailerID:"+App.retailerID, 
+            ",consumberID:"+App.consumerID
         );
     },
 
@@ -159,7 +160,9 @@ App = {
                 break;
             case 10:
                 return await App.fetchItemBufferTwo(event);
-                break;
+	        break;
+	    case 11:
+	        return App.readForm();
             }
     },
 
@@ -304,10 +307,12 @@ App = {
 
     fetchItemBufferTwo: function () {
     ///    event.preventDefault();
-    ///    var processId = parseInt($(event.target).data('id'));
+	///    var processId = parseInt($(event.target).data('id'));
+	App.upc = $('#upc').val();
+        console.log('upc',App.upc);
                         
         App.contracts.SupplyChain.deployed().then(function(instance) {
-          return instance.fetchItemBufferTwo.call(App.upc);
+          return instance.fetchItemBufferTwo(App.upc);
         }).then(function(result) {
           $("#ftc-item").text(result);
           console.log('fetchItemBufferTwo', result);
