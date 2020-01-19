@@ -3,10 +3,10 @@
 - My deployed SupplyChain.sol is available at https://rinkeby.etherscan.io/address/0x9a82cafa6766511a27157f92ea4998b01395ea39#code
   The transaction hash is 0xc866bc40f8f15444afaaab2faf78b5df1594015bb88d0fe75a538310d73dba6d
 - Dependencies
--- Truffle v4.1.16
--- Node v10.18.0
--- Web3 v1.2.1
--- truffle-hdwallet-provider v1.0.17 This dependency is used to deploy my contract to Rinkeby network using Infura.
+ - Truffle v4.1.16
+ - Node v10.18.0
+ - Web3 v1.2.1
+ - truffle-hdwallet-provider v1.0.17 This dependency is used to deploy my contract to Rinkeby network using Infura.
 
 # Supply chain & data auditing
 
